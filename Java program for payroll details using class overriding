@@ -1,0 +1,97 @@
+import java.lang.*;
+import java .util.Scanner;
+
+public class EmployeePayroll 
+{
+ 
+ int age;
+    String name,  gender;
+    Scanner get = new Scanner(System.in);
+    EmployeePayroll()
+    {
+        System.out.println("Enter Name of the Employee:");
+        name = get.nextLine();
+        System.out.println("Enter Gender of the Employee:");
+        gender = get.nextLine();
+        
+        System.out.println("Enter Age:");
+        age = get.nextInt();
+    }
+ 
+    void display()
+    {
+        System.out.println("Employee Name: "+name);
+        System.out.println("Age: "+age);
+        System.out.println("Gender: "+gender);
+        
+    }
+}
+ 
+class fullTimeEmployees extends EmployeePayroll
+{
+    int salary;
+    int da,ta, workinghrs, rate,sal;
+    fullTimeEmployees()
+    {
+        System.out.println("Enter DA:");
+        da = get.nextInt();
+        System.out.println("Enter TA:");
+        ta = get.nextInt();
+        System.out.println("Enter Salary for each day:");
+        salary = get.nextInt();
+        System.out.println("Enter Number of Working Hours:");
+        workinghrs = get.nextInt();
+    
+      rate =ta+da+(salary*workinghrs);
+    }
+    void display()
+    {
+        System.out.println(".........................."+"\n"+" Employee payroll Details"+"\n"+".........................."+"\n");
+        super.display();
+        System.out.println("Salary: "+salary);
+        System.out.println("DA: "+da);
+        System.out.println("TA: "+ta);
+        System.out.println("Number of Working Hours: "+workinghrs);
+        System.out.println("Salary for "+workinghrs+" working hours is: "+rate); 
+    }
+}
+ 
+class Employees
+{
+    public static void main(String args[])
+    {
+        System.out.println("Enter Full Time Employee Details");
+        fullTimeEmployees ob1 = new fullTimeEmployees();
+        
+        ob1.display();
+     }
+}
+
+//OUTPUT OF THE ABOVE CODE
+Enter Full Time Employee Details
+Enter Name of the Employee:
+Sane
+Enter Gender of the Employee:
+female
+Enter Age:
+30
+Enter DA:
+100
+Enter TA:
+200
+Enter Salary for each day:
+1000
+Enter Number of Working Hours:
+90
+.........................
+ Employee payroll Details
+..........................
+
+Employee Name: Sane
+Age: 30
+Gender: female
+Salary: 1000
+DA: 100
+TA: 200
+Number of Working Hours: 90
+Salary for 90 working hours is: 90300
